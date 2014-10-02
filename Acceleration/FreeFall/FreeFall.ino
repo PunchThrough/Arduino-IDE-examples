@@ -37,7 +37,7 @@ void loop() {
     }else{
       fallDuration = 0;
     }
-    // Check for free fall 20 times a second
+    // Sleep for a bit before checking for free falling again
     Bean.sleep(50);
   }
   
