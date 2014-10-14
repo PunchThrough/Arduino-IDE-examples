@@ -11,18 +11,18 @@
 bool connected = false;
 
 void setup() {
-  //Turn of the LED
+  // Turn off the LED
   Bean.setLed(0, 0, 0);
 }
 
 void loop() {
   connected = Bean.getConnectionState();
   if(connected){
-    //Turn the LED green
+    // Turn the LED green
     Bean.setLed(0, 255, 0);
   }
   else{
-    //Turn the LED red
+    // Turn the LED red
     Bean.setLed(255, 0, 0);
   }
   Bean.sleep(100);
