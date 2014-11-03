@@ -8,22 +8,29 @@
   This example code is in the public domain.
 */
 
-#define THRESHOLD 100    // When acceleration change goes beyond this threshold, the LED will blink.
+// When acceleration change goes beyond this threshold, the LED will blink.
+#define THRESHOLD 100
 
 AccelerationReading previousAccel;
 
 void setup() {
-  Bean.setLed(0, 0, 0);                   // Turn off the Bean's LED  
-  previousAccel = Bean.getAcceleration(); // Initial reading
+  // Turn off the Bean's LED
+  Bean.setLed(0, 0, 0);  
+  // Initial reading  
+  previousAccel = Bean.getAcceleration(); 
 }
 
 void loop() {
-  AccelerationReading currentAccel = Bean.getAcceleration();   // Get the current acceleration with a conversion of 3.91×10-3 g/unit.
+  // Get the current acceleration with a conversion of 3.91×10-3 g/unit.
+  AccelerationReading currentAccel = Bean.getAcceleration();   
   
-  int accelDifference = getAccelDifference(previousAccel, currentAccel);   // Find the difference between the current acceleration and that of 200ms ago.
-  previousAccel = currentAccel;                                            // Update previousAccel for the next loop. 
-   
-  if(accelDifference > THRESHOLD){   // Check if the Bean has been moved beyond our threshold.
+  // Find the difference between the current acceleration and that of 200ms ago.
+  int accelDifference = getAccelDifference(previousAccel, currentAccel); 
+  // Update previousAccel for the next loop.   
+  previousAccel = currentAccel;                                            
+  
+  // Check if the Bean has been moved beyond our threshold.
+  if(accelDifference > THRESHOLD){   
     // Blink the LED
     Bean.setLed(255, 0, 0);
     Bean.sleep(100);
@@ -39,5 +46,6 @@ int getAccelDifference(AccelerationReading readingOne, AccelerationReading readi
   int deltaX = abs(readingTwo.xAxis - readingOne.xAxis);
   int deltaY = abs(readingTwo.yAxis - readingOne.yAxis);
   int deltaZ = abs(readingTwo.zAxis - readingOne.zAxis);
-  return deltaX + deltaY + deltaZ;   // Return the magnitude
+  // Return the magnitude
+  return deltaX + deltaY + deltaZ;   
 }

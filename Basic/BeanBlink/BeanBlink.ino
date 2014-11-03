@@ -12,12 +12,16 @@ void setup() {
 }
 
 void loop() {
-  Bean.setLed(255, 0, 0);   // LED is red
-  Bean.sleep(1000);        
-  Bean.setLed(0, 255, 0);   // LED is green
+  // Turn the Bean's LED red
+  Bean.setLed(255, 0, 0);
+  Bean.sleep(1000);      
+  // Turn the Bean's LED green  
+  Bean.setLed(0, 255, 0);
   Bean.sleep(1000);
-  Bean.setLed(0, 0, 255);   // LED is blue
+  // Turn the Bean's LED blue
+  Bean.setLed(0, 0, 255);
   Bean.sleep(1000);
-  Bean.setLed(0, 0, 0);     // LED is turned off
+  // Turn off the Bean's LED
+  Bean.setLed(0, 0, 0);
   Bean.sleep(1000);
 }

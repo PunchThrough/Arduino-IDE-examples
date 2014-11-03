@@ -1,7 +1,7 @@
 /* 
   This sketch shows you how to monitor if your Bean is in free fall. 
   
-  The Bean will track how many times it's been dropped.
+  The Bean will track how many times it's been dropped print it in Arduino's Serial Monitor.
   
   To use the Serial Monitor, set Arduino's serial port to "/tmp/tty.LightBlue-Bean"
   and the Bean as "Virtual Serial" in the OS X Bean Loader.
@@ -37,7 +37,7 @@ void loop() {
     }else{
       fallDuration = 0;
     }
-    // Check for free fall 20 times a second
+    // Sleep for a bit before checking for free falling again
     Bean.sleep(50);
   }
   
