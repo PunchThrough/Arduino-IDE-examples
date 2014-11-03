@@ -2,7 +2,7 @@
   This sketch shows how to use enableWakeOnConnect(). 
   It wakes the Bean up when it establishes a BLE connection.
   
-  If the Bean is connected to another device, the built-in LED will blink red.  
+  If the Bean is connected to a device, the built-in LED will blink red.  
   If the device disconnects the Bean will sleep and the LED stops blinking.
 
   This example code is in the public domain.
